@@ -147,7 +147,7 @@ window.addEventListener('load', function () {
         };
 
         const dayIndices = wordsPerDay[day];
-        return dayIndices.map(index => `${words[language][index][0]} - ${words[language][index][1]}`);
+        return dayIndices.map((index, i) => `${i + 1}. ${words[language][index][0]} - ${words[language][index][1]}`);
     }
 
     function displayWord() {
