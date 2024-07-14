@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f4;
+
 }
 
 #loading-screen {
@@ -24,10 +25,15 @@ body {
 
 #content {
     padding: 20px;
+
 }
 
 #language-selection {
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #days-selection {
@@ -78,4 +84,45 @@ body {
 
 .nav-button:hover {
     background-color: #218838;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+#language-select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+#language-select option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.fa-volume-high {
+    
+    font-size: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .4s all ease-in-out;
+}
+.fa-volume-high:hover {
+    color: #333;
+}
+.fa-globe {
+    color: #007BFF;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,8 +15,9 @@
 
     <div id="content" style="display: none;">
         <div id="language-selection">
-            <h1>Select the language you want to learn:</h1>
+            <h1 id="selectedName">Select the language you want to learn:</h1>
             <select id="language-select">
+                <option value="choose the language" selected>Choose the language</option>
                 <option value="spanish">Spanish</option>
                 <option value="russian">Russian</option>
                 <option value="polish">Polish</option>
@@ -33,6 +35,7 @@
                 <button id="next-button" class="nav-button">Next</button>
             </div>
             <div id="timer">Time left: <span id="time">2:00</span></div>
+
         </div>
     </div>
 

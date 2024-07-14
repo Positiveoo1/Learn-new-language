@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
     const timerElement = document.getElementById('time');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
-    
+    const selectedName = this.document.getElementById('selectedName');
     let selectedLanguage = 'spanish';
     let currentDay = 1;
     let currentWordIndex = 0;
@@ -18,19 +18,39 @@ window.addEventListener('load', function () {
         loadingScreen.style.display = 'none';
         content.style.display = 'block';
     }, 2000);
-
+  const volume = document.createElement('i');
+    volume.classList.add('fa-solid', 'fa-volume-high');
+    
     startButton.addEventListener('click', function () {
+     
         selectedLanguage = languageSelect.value;
+        if(selectedLanguage === "choose the language")  {
+            alert("Please first choose desired language");
+            return;
+        }
+        languageSelect.style.display = 'none';
+        selectedName.innerHTML = `<i class="fa-solid fa-globe"></i> ${selectedLanguage}`
+        selectedName.style.color = 'red'
         daysSelection.innerHTML = '';
         for (let day = 1; day <= 10; day++) {
             const dayButton = document.createElement('button');
             dayButton.innerText = 'Day ' + day;
-            dayButton.addEventListener('click', () => startLearning(day));
+            dayButton.addEventListener('click', () => {
+                selectedName.innerHTML = `<i class="fa-solid fa-globe"></i> ${selectedLanguage} day ${day}`;
+                startLearning(day)
+            } );
             daysSelection.appendChild(dayButton);
         }
         document.getElementById('learning-content').style.display = 'block';
+   
+        startButton.style.display = 'none';
+        languageSelect.parentNode.insertBefore(volume, languageSelect.nextSibling);
+
+        
     });
 
+
+ 
     function startLearning(day) {
         currentDay = day;
         currentWordIndex = 0;
